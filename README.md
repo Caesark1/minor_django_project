@@ -29,3 +29,5 @@ or
 ## Step 5
 - Create superuser
 #### docker-compose exec web python manage.py createsuperuser
+
+And than go to the http://127.0.0.1:8000/
