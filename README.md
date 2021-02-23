@@ -1,6 +1,6 @@
 # minor_django_project
 
-### Need to wait after registration for a while to recieve confirmation/activation message to your google email
+### Node: #### Need to wait after registration for a while to recieve confirmation/activation message to your google email
 
 
 ## Step 1
