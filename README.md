@@ -3,7 +3,9 @@
 
 ## Step 1
 - Install repository
-#### git clone git@github.com:Caesark1/minor_django_project.git / https://github.com/Caesark1/minor_django_project.git 
+#### git clone git@github.com:Caesark1/minor_django_project.git 
+or 
+#### https://github.com/Caesark1/minor_django_project.git 
 
 ## Step 2
 - Create images and container with command: 
