@@ -1,0 +1,60 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<head>
+    
+    {% block title %}
+    User Profile page
+{% endblock %}
+{% block content %}
+</head>
+
+    <h2>User Profile page</h2>
+
+    <p>username: {{user.user.username}}</p>
+    {% if user.phone %}
+    <p>user phone number: {{user.phone}}</p>
+    {% else %}
+    <p>user phone number: No number</p>
+    {% endif %}
+    <p>user email: {{user.user.email}}</p>
+    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
+
+    <h3>Or You can update you profile</h3>
+
+    <h4></h4>
+    <form id="update-form">
+        {% csrf_token %}
+        <p>Full name</p>
+        <input type="text" id='fullname' name='fullname'>
+        <p class='mt-2'>Phone number</p>
+        <input type="text" id='phone' name='phone'>
+        <p class='mt-2'>email</p>
+        <input type="text" id='email' name='email'>
+        <br>
+        <input type="submit">
+
+    </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type='text/javascript'>
+    $(document).on('submit', '#update-form', function(e){
+        e.preventDefault();
+
+        $.ajax({
+            type:'POST',
+            url:'/profile/profile_update/',
+            data:{
+                name:$('#fullname').val(),
+                phone:$('#phone').val(),
+                email:$('#email').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success:function(data){
+                $('h4').html(data);
+            }
+        });
+    });
+    </script>
+    
+{% endblock %}
