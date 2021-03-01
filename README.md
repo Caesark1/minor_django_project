@@ -1,9 +1,9 @@
 # minor_django_project
 
-## Node: 
+## Note: 
 ### Need to wait after registration for a while to recieve confirmation/activation message to your google email
 
-## Node2:
+## Note2:
 ### This project didn't test in windows, it can be working only on linux/mac. 
 
 ## Step 1
